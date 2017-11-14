@@ -5,6 +5,8 @@ This project has been developed within University of Verona and is a work in pro
 
 ## Installation
 
+git clone in your "catkinws/src"
+
 use rosdep for installing missing dependencies.
 
 use pip to install missing packages in python, requirements.txt soon aviable
