@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="rviz_config_file" default="$(find localization)/launch/Rviz/data_visualization.rviz"/>
+  <arg name="show_rviz" default="true"/>
+  
+  <group if="$(arg show_rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(arg rviz_config_file)"/> 
+  </group>
+
+
+  <node name="sensor_publisher" pkg="sensor_publisher" type="sensors_publisher.py" output="screen"/>  
+  <node name="complementary_filter_node" pkg="imu_complementary_filter" type="complementary_filter_node" output="screen" />
+  <node name="map_publisher" pkg="sensor_publisher" type="map_publisher.py" output="screen" /> 
+  <node name="localization" pkg="localization" type="localization.py" output="screen"/> 
+
+
+    
+</launch>

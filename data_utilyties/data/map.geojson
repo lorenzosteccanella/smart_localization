@@ -1,0 +1,360 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2017-10-10T10:31:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/137434442",
+        "highway": "pedestrian",
+        "name": "Via Duomo"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.311228,
+            45.1930994
+          ],
+          [
+            11.3111418,
+            45.1930827
+          ],
+          [
+            11.3102231,
+            45.1929969
+          ],
+          [
+            11.3094997,
+            45.1929303
+          ]
+        ]
+      },
+      "id": "way/137434442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/137434444",
+        "highway": "pedestrian",
+        "name": "Via Carlo Rosselli"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.3102231,
+            45.1929969
+          ],
+          [
+            11.3100634,
+            45.1933149
+          ]
+        ]
+      },
+      "id": "way/137434444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/137434447",
+        "highway": "pedestrian",
+        "name": "Via Fiume",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.3093479,
+            45.1932249
+          ],
+          [
+            11.3100634,
+            45.1933149
+          ]
+        ]
+      },
+      "id": "way/137434447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/137434450",
+        "highway": "residential",
+        "name": "Via Carlo Rosselli",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.309183,
+            45.1942903
+          ],
+          [
+            11.3092426,
+            45.1942022
+          ],
+          [
+            11.3096537,
+            45.1938109
+          ],
+          [
+            11.3097735,
+            45.1936972
+          ]
+        ]
+      },
+      "id": "way/137434450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/168567176",
+        "highway": "residential",
+        "name": "Via Minghetti",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.3092277,
+            45.1934506
+          ],
+          [
+            11.3096519,
+            45.1935244
+          ],
+          [
+            11.3099051,
+            45.1935682
+          ],
+          [
+            11.3108218,
+            45.1936435
+          ],
+          [
+            11.3109077,
+            45.1936591
+          ],
+          [
+            11.3110941,
+            45.1936929
+          ],
+          [
+            11.3116047,
+            45.1938108
+          ]
+        ]
+      },
+      "id": "way/168567176"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/225383729",
+        "highway": "residential",
+        "name": "Piazza della Libertà",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.3113707,
+            45.193303
+          ],
+          [
+            11.3112177,
+            45.1934538
+          ],
+          [
+            11.3111246,
+            45.1935546
+          ],
+          [
+            11.3110941,
+            45.1936929
+          ]
+        ]
+      },
+      "id": "way/225383729"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/225579895",
+        "highway": "residential",
+        "name": "Via Fiume",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.3100634,
+            45.1933149
+          ],
+          [
+            11.3109112,
+            45.1933951
+          ],
+          [
+            11.3112177,
+            45.1934538
+          ]
+        ]
+      },
+      "id": "way/225579895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/225579897",
+        "highway": "residential",
+        "name": "Via Carlo Rosselli",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.3097735,
+            45.1936972
+          ],
+          [
+            11.3099051,
+            45.1935682
+          ],
+          [
+            11.3100634,
+            45.1933149
+          ]
+        ]
+      },
+      "id": "way/225579897"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/225579898",
+        "highway": "pedestrian",
+        "name": "Via Roma",
+        "oneway": "no"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.3092277,
+            45.1934506
+          ],
+          [
+            11.3093479,
+            45.1932249
+          ],
+          [
+            11.3094997,
+            45.1929303
+          ],
+          [
+            11.3097311,
+            45.1924846
+          ],
+          [
+            11.3100668,
+            45.1919127
+          ]
+        ]
+      },
+      "id": "way/225579898"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/225579899",
+        "highway": "residential",
+        "name": "Via Borgo Bello",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.3111853,
+            45.1941136
+          ],
+          [
+            11.310781,
+            45.1940297
+          ],
+          [
+            11.3105572,
+            45.1940059
+          ],
+          [
+            11.3096537,
+            45.1938109
+          ]
+        ]
+      },
+      "id": "way/225579899"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/225579902",
+        "highway": "residential",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.3097735,
+            45.1936972
+          ],
+          [
+            11.3103278,
+            45.1937814
+          ],
+          [
+            11.3108375,
+            45.1938495
+          ]
+        ]
+      },
+      "id": "way/225579902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/225582917",
+        "highway": "residential",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.310781,
+            45.1940297
+          ],
+          [
+            11.3108375,
+            45.1938495
+          ],
+          [
+            11.3109077,
+            45.1936591
+          ]
+        ]
+      },
+      "id": "way/225582917"
+    }
+  ]
+}
