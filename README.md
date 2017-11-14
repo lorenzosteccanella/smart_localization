@@ -7,6 +7,8 @@ This project has been developed within University of Verona and is a work in pro
 
 git clone in your "catkinws/src"
 
+$ catkin_make 
+
 use rosdep for installing missing dependencies.
 
 use pip to install missing packages in python, requirements.txt soon aviable
