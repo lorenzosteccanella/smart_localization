@@ -1,19 +1,54 @@
-# smart_localization
-Smart localization for smartphone
+# Smart_localization
+This is a project on smart localization for smartphone(predominantly),
+using different algorithm, filters and  data fusion between IMU and GPS data.
 
-This project has been developed within University of Verona and is a work in progress.
+## Getting Started
 
-## Installation
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-git clone in your "catkinws/src"
+### Prerequisites
 
-$ catkin_make 
+Python version 2.7 or newer check on terminal by typing python --version.
 
-use rosdep for installing missing dependencies.
+Ros distro kinetic.
 
-use pip to install missing packages in python, requirements.txt soon aviable
+For installing ROS kinetic please visit the site http://wiki.ros.org/kinetic/Installation.
 
-## Run
 
-$ roslaunch localization localization.launch 
+### Installing
+
+A step by step series of examples that tell you how to get a development environment running.
+
+If you don't have the follow package please install by typing in the terminal:
+ sudo apt-get install python-pip
+ sudo pip install pandas
+ sudo pip install pygeoj
+ sudo pip install folium
+ sudo pip install utm
+ sudo pip install scipy
+ sudo pip install flask_socket
+ 
+## Running the tests
+
+In the folder catkin_ws/src clone this project.
+
+Remember to source devel/setup.bash
+
+In the launch folder type the following command:
+
+roslaunch localization localization.launch
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
 
