@@ -4,32 +4,36 @@ import tf
 import numpy as np
 from geometry_msgs.msg import Pose
 from nav_msgs.msg import Odometry
-import random
-import csv
-import pandas as pd
-import utm
 from sensor_msgs.msg import Imu
+from std_msgs.msg import UInt8
 import time
 
 
 
 
-class localization():
+class Step_Counter_to_position():
 
   def __init__(self):
-    rospy.init_node('localization')
+    rospy.init_node('Step_Counter_to_position')
     self.imu_msg = Imu()
-    self.gps_msg = Odometry()
+    self.Step_Counter_msg = UInt8()
 
-    pub = rospy.Publisher("/localization", Odometry)
+    pub = rospy.Publisher("/Step_Counter_to_position", Odometry)
 
     rospy.Subscriber('/imu/data', Imu, self.imu_cb)
-    rospy.Subscriber('/GPS', Odometry, self.gps_cb)
+    rospy.Subscriber('/Step_Counter', UInt8, self.Step_Counter_cb)
 
     rate = rospy.Rate(25.0)
-    rospy.loginfo('localization successfully started')
+    rospy.loginfo('Step_Counter_to_position successfully started')
 
     P = np.mat(np.diag([0.5]*3))
+    
+    ########  TODO
+    # starting point in utm coordinate 
+    #x = 
+    #y = 
+
+   
 
     while not rospy.is_shutdown():
 
@@ -63,8 +67,8 @@ class localization():
 
   def imu_cb(self, msg):
     self.imu_msg = msg  
-  def gps_cb(self, msg):
-    self.gps_msg = msg  
+  def Step_Counter_cb(self, msg):
+    self.Step_Counter_msg = msg  
 
 
 
@@ -75,6 +79,6 @@ class localization():
 
 if __name__ == '__main__':
   try:
-    orient = localization()
+    orient = Step_Counter_to_position()
   except rospy.ROSInterruptException:
     pass

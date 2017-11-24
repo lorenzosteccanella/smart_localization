@@ -12,11 +12,16 @@ from fusion import Fusion
 from sensor_msgs.msg import Imu, MagneticField
 import time
 from math import sqrt, atan2, asin, degrees, radians
+import os
+from std_msgs.msg import UInt8
 
 
 
 
 class sensor_publisher():
+
+  dir = os.path.dirname(__file__)
+  filename = os.path.join(dir, '../data/Data.csv')
 
   def __init__(self):
     rospy.init_node('sensor_publisher')
@@ -32,9 +37,11 @@ class sensor_publisher():
     self.imu_mag = MagneticField()
     self.mag_pub = rospy.Publisher('imu/mag', MagneticField)
 
+    StepN_pub= rospy.Publisher('Step_Counter', UInt8)
+
     GPS=self.GPS_load_data_from_CSV()
     IMU=self.IMU_load_data_from_CSV()
-
+    StepN=self.StepCounter_load_data_from_CSV()
     fuse = Fusion()
 
     index=0
@@ -91,18 +98,26 @@ class sensor_publisher():
       imu_mag.magnetic_field.y = mag[1]
       imu_mag.magnetic_field.z = mag[2]
 
+      numberOfStep=UInt8()
+      numberOfStep= StepN[index]
+
       self.imu = imu
       self.imu_pub.publish(self.imu)
       self.imu_mag = imu_mag
       self.mag_pub.publish(self.imu_mag)
       pubGPS.publish(p)
       pubGPSPoint.publish(p2)
+      StepN_pub.publish(numberOfStep)
       
       index+=1
       rate.sleep()
 
   def GPS_load_data_from_CSV(self):
-    df = pd.read_csv('/home/lorenzo/smart_localization/src/sensor_publisher/data/Data.csv', delimiter=',')
+    try:
+      df = pd.read_csv(self.filename, delimiter=',')
+    except Exception, e:
+      print ("Error in reading", self.filename)
+      print (e)
     GPS=df.values[:,4:7]
     #GPS.sort(axis=0)
     nanIndex= pd.isnull(GPS)
@@ -111,13 +126,29 @@ class sensor_publisher():
     return GPS
 
   def IMU_load_data_from_CSV(self):
-    df = pd.read_csv('/home/lorenzo/smart_localization/src/sensor_publisher/data/Data.csv', delimiter=',')
+    try:
+      df = pd.read_csv(self.filename, delimiter=',')
+    except Exception, e:
+      print ("Error in reading", self.filename)
+      print (e)
     IMU=df.values[:,7:16]
     #IMU.sort(axis=0)
     nanIndex= pd.isnull(IMU)
     IMU[nanIndex]=0
     print(IMU[0])
     return IMU
+
+  def StepCounter_load_data_from_CSV(self):
+    try:
+      df = pd.read_csv(self.filename, delimiter=',')
+    except Exception, e:
+      print ("Error in reading", self.filename)
+      print (e)
+    StepN=df.values[:,16]
+    nanIndex= pd.isnull(StepN)
+    StepN[nanIndex]=0
+    print(StepN[0])
+    return StepN
 	
     
     
