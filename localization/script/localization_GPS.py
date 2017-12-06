@@ -9,6 +9,8 @@ import random
 import csv
 import pandas as pd
 import time
+from std_msgs.msg import UInt8, Float32
+from math import sqrt, atan2, asin, degrees, radians, pi
 
 
 
@@ -18,30 +20,30 @@ class localization_GPS():
 
   def __init__(self):
     rospy.init_node('localization_GPS')
-    self.imu_msg = Imu()
+    self.orientation_gps_msg = Float32()
     self.gps_msg = Odometry()
 
     pub = rospy.Publisher("/localization_GPS", Odometry)
 
-    rospy.Subscriber('/imu/data', Imu, self.imu_cb)
+    rospy.Subscriber('/Orientation_GPS', Float32, self.orientation_gps_cb)
     rospy.Subscriber('/GPS', Odometry, self.gps_cb)
 
     rate = rospy.Rate(25.0)
     rospy.loginfo('localization_GPS successfully started')
 
     P = np.mat(np.diag([0.5]*3))
-
+    moving_average_orientation=[]
+    moving_average_size=5
     while not rospy.is_shutdown():
 
       pos = self.gps_msg.pose.pose.position
-      rot = self.imu_msg.orientation
-      quaternion = (
-    	  rot.x,
-    	  rot.y,
-    	  rot.z,
-    	  rot.w)
-      euler = tf.transformations.euler_from_quaternion(quaternion)
-      quaternion = tf.transformations.quaternion_from_euler(0, 0, euler[2])
+      rot = self.orientation_gps_msg
+      if(len(moving_average_orientation)<moving_average_size):
+        moving_average_orientation.append(rot.data)
+      else:
+        del moving_average_orientation[0]
+        moving_average_orientation.append(rot.data)
+      quaternion = tf.transformations.quaternion_from_euler(0, 0, np.mean(moving_average_orientation))
       p=Odometry()
       p.header.stamp = rospy.Time.now()
       p.header.frame_id = "/map"
@@ -61,8 +63,8 @@ class localization_GPS():
 
       rate.sleep()
 
-  def imu_cb(self, msg):
-    self.imu_msg = msg  
+  def orientation_gps_cb(self, msg):
+    self.orientation_gps_msg = msg  
   def gps_cb(self, msg):
     self.gps_msg = msg  
 

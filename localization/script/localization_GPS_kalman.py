@@ -44,8 +44,9 @@ class localization_GPS_kalman():
       trajectory_gps=self.initPath_msg(path_gps_position)
       tracker.predict()
       z=np.array([[pos.x,pos.y]]).T
+      
       tracker.update(z)
-      print((tracker.x[0],tracker.x[2]),(pos.x,pos.y))
+      #print((tracker.x[0],tracker.x[2]),(pos.x,pos.y))
       path_kalman_position.append((tracker.x[0],tracker.x[2]))
       trajectory_kalman=self.initPath_msg(path_kalman_position)
 
