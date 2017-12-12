@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bFine"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/scrollView3">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/bFine"
+                android:gravity="center"
+                android:text="Coordinate: "
+                android:textSize="30sp" />
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/bInizio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:text="Inizio" />
+
+        <Button
+            android:id="@+id/bFine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bInizio"
+            android:layout_marginTop="13dp"
+            android:text="FINE" />
+
+        <TextView
+            android:id="@+id/lblInizio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblStato"
+            android:layout_marginTop="33dp"
+            android:layout_toStartOf="@+id/tempo"
+            android:text="Coordinate Iniziali"
+            android:textSize="18sp"
+            android:layout_toLeftOf="@+id/tempo" />
+
+        <TextView
+            android:id="@+id/lblFine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/lblInizio"
+            android:layout_alignBottom="@+id/lblInizio"
+            android:layout_toEndOf="@+id/lblDistanza"
+            android:layout_toRightOf="@+id/lblDistanza"
+            android:text="Coordinati Finali"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblDistanza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblFine"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="34dp"
+            android:text="Distanza: "
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblStato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seleziona un azione"
+            android:layout_below="@+id/lblProva"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/lblProva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scrollView3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="57dp"
+            android:text="Prova Numero: 1"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblDistanza"
+            android:layout_marginTop="48dp"
+            android:layout_toLeftOf="@+id/chronometer"
+            android:layout_toStartOf="@+id/chronometer"
+            android:text="Tempo "
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/lblProva"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/lblProva"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accelerometro"
+            android:layout_alignBottom="@+id/lblProva"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/textViewG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giroscopio"
+            android:layout_alignBottom="@+id/lblProva"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textViewM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Magnetometro"
+            android:layout_below="@+id/lblDistanza"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewA"
+            android:layout_marginBottom="12dp"
+            android:text="Accelerometro"
+            android:layout_toLeftOf="@+id/lblProva"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView6"
+            android:layout_alignLeft="@+id/textViewG"
+            android:layout_alignStart="@+id/textViewG"
+            android:text="Giroscopio" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/lblDistanza"
+            android:text="Magnetometro" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tempo"
+            android:layout_alignTop="@+id/tempo"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/textView6"
+            android:layout_toRightOf="@+id/textView6"
+            android:text="Percorso:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_above="@+id/textViewA" />
+
+        <TextView
+            android:id="@+id/percorso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView14"
+            android:layout_alignLeft="@+id/lblFine"
+            android:layout_alignStart="@+id/lblFine"
+            android:text="0.0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</ScrollView>
