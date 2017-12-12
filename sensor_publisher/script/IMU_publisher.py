@@ -64,7 +64,7 @@ class IMU_publisher():
       rate.sleep()
 
   def load_data_from_CSV(self):
-    df = pd.read_csv('/home/lorenzo/smart_localization/src/sensor_publisher/data/Data.csv', delimiter=',')
+    df = pd.read_csv('/home/dario/catkin_ws/src/smart_localization/sensor_publisher/data/Data.csv', delimiter=',')
     IMU=df.values[:,7:16]
     #IMU.sort(axis=0)
     nanIndex= pd.isnull(IMU)

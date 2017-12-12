@@ -3,7 +3,7 @@
 import rospy
 import tf
 import numpy as np
-from nav_msgs.msg import Odometry
+from nav_msgs.msg import Odometry, Path
 from geometry_msgs.msg import PoseArray, Pose, PointStamped
 import random
 import math
@@ -17,18 +17,18 @@ class map_publisher():
     pub = rospy.Publisher("/particleMap", PoseArray)
     rate = rospy.Rate(60.0)
     rospy.loginfo('map_publisher node successfully started')
-    
+
     Mappa = Map()
 
-    Mappa.load_map("/home/lorenzo/smart_localization/src/sensor_publisher/data/map.geojson")
+    Mappa.load_map("/home/dario/catkin_ws/src/smart_localization/sensor_publisher/data/map.geojson")
 
     Mappa.create_vector_map(1)
 
     particles=self.initParticle(Mappa.vector_map)
-    
+
     while not rospy.is_shutdown():
 
-      pub.publish(particles)  
+      pub.publish(particles)
 
       rate.sleep()
 
@@ -46,7 +46,7 @@ class map_publisher():
       somePose.position.x = vector_map[i][0]
       somePose.position.y = vector_map[i][1]
       somePose.position.z = 0.0
-      
+
       quaternion = tf.transformations.quaternion_from_euler(0, 0, Zorientation)
       somePose.orientation.x = quaternion[0]
       somePose.orientation.y = quaternion[1]
@@ -55,8 +55,8 @@ class map_publisher():
 
       poseArray.poses.append(somePose)
     return poseArray
-     
-  
+
+
 
 
 if __name__ == '__main__':

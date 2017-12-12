@@ -12,6 +12,9 @@ Panels:
         - /Odometry2/Shape1
         - /Odometry2/Covariance1/Position1
         - /PoseArray1
+        - /Path1
+        - /Odometry3
+        - /Odometry3/Shape1
       Splitter Ratio: 0.5
     Tree Height: 775
   - Class: rviz/Selection

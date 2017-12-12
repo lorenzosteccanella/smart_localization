@@ -102,7 +102,7 @@ class sensor_publisher():
       rate.sleep()
 
   def GPS_load_data_from_CSV(self):
-    df = pd.read_csv('/home/lorenzo/smart_localization/src/sensor_publisher/data/Data.csv', delimiter=',')
+    df = pd.read_csv('/home/dario/catkin_ws/src/smart_localization/sensor_publisher/data/Data.csv', delimiter=',')
     GPS=df.values[:,4:7]
     #GPS.sort(axis=0)
     nanIndex= pd.isnull(GPS)
@@ -111,7 +111,7 @@ class sensor_publisher():
     return GPS
 
   def IMU_load_data_from_CSV(self):
-    df = pd.read_csv('/home/lorenzo/smart_localization/src/sensor_publisher/data/Data.csv', delimiter=',')
+    df = pd.read_csv('/home/dario/catkin_ws/src/smart_localization/sensor_publisher/data/Data.csv', delimiter=',')
     IMU=df.values[:,7:16]
     #IMU.sort(axis=0)
     nanIndex= pd.isnull(IMU)
